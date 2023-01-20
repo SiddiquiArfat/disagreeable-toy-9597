@@ -7,7 +7,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <!-- <script src="./app.js"></script> -->
 </head>
 <body>
     <div class="top">
@@ -15,7 +14,7 @@
             <p>Free Shipping on Orders $50+ <span><u>Details</u></span></p>
             <img src="./clothi.png" alt="Error">
             <div class="icon">
-                <div id="src"  onclick="show()">
+                <div id="src">
                     <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
                 </div>
                 <div id="pro">
@@ -30,8 +29,8 @@
         <div class="nav">
             <div class="subnav">
             <a href="./women.html">WOMEN</a>
-            <a href="">MEN</a>
-            <a href="">JEANS</a>
+            <a href="./mens.html">MEN</a>
+            <a href="./jeans.html">JEANS</a>
             <a href="">NEW</a>
             <a href="">SALE</a>
             <a href="">STYLE TRIAL RENTAL</a>
@@ -40,25 +39,26 @@
         </div>
         </div>
     </div>
+
     <div id="sidebar">
         
-        <input type="text" name="" id="searchval" placeholder="Enter Product">
-        <button id="srcbtn">search</button>
-        <h3>TRENDING SEARCH</h3>
+        <input type="text" name="" id="searchval">
+        <button id="srcbtn" onclick="src()">search</button>
         <ul>
-            <li><a href="women.html">Womens Trending</a> </li>
-            <li><a href="mens.html">Mens Trending</a></li>
-            <li><a href="jeans.html">Jeans</a></li>
+            <il><a href="">Womens Trending</a> </il>
+            <il><a href="">Mens Trending</a></il>
+            <il><a href="">Jeans</a></il>
         </ul>
+        
     </div>
 
 
     <div class="heading">
         <div>
-            Women / Tops
+                SEARCH / Tops
         </div>
         <div>
-            <h1>WOMEN'S TOPS</h1>
+            <h1 id="headdisp"></h1>
         </div>
         <div>
             <p>Sort By:</p> 
@@ -283,33 +283,12 @@
     </div>
 </body>
 <script>
-
-
-    function show(){
-            document.getElementById('sidebar').classList.toggle('active');
-        }
-        // let form = document.querySelector('form');
-        let btnn = document.getElementById('srcbtn');
-        let val = document.getElementById('searchval');
-
-        btnn.addEventListener('click',function(e){
-        e.preventDefault();
-        let a = val.value;
-        console.log(a)  
-        let arr = a;
-        localStorage.setItem('src',JSON.stringify(arr)); 
-        location.replace('./search.html');
-        })
+    
 
 
      let select = document.querySelector(".question");
      let select2 = document.querySelector(".browsecat");
-    //  let count = 0; 
-    // select.forEach(element => {
-    //     element.addEventListener('click',()=>{
-    //         element.classList.toggle('active')
-    //     })
-    // });
+    
 
 
     // filter js
@@ -318,16 +297,36 @@
         let data = await url.json(); 
         console.log(data);
         let arr = [];
+        // for(let i=0;i<data.length;i++){
+        //     if(data[i].category == 'women'){
+        //         arr.push(data[i]);
+        //     }
+        // }
+        let a = JSON.parse(localStorage.getItem('src')).toUpperCase();
+        let head = document.getElementById('headdisp');
+        head.textContent = "You searched for '"+a||"Data No Found"+"'"
+        let newarr = [];
+        if(a == ""){
+            fun();
+        }
+        else{
         for(let i=0;i<data.length;i++){
-            if(data[i].category == 'women'){
-                arr.push(data[i]);
+            if(data[i].title.toUpperCase().indexOf(a)>-1){
+                newarr.push(data[i]);
             }
         }
-        appenddata(arr);
+        console.log(newarr);
+        appenddata(newarr);
+    }
     }
     fetchapi();
 
+    // function fun(){
+    //     let h1 = 
+    // }
 
+
+// filter
     let min = document.getElementById('min');
     let max = document.getElementById('max');
     let btn = document.getElementById('sortmin');
@@ -335,17 +334,20 @@
         console.log(min.value,max.value);
         fetchapifilter(min.value,max.value);
     })
+
+
     async function fetchapifilter(min,max){
         let url = await fetch('https://63c8bafd075b3f3a91e5c84d.mockapi.io/product');
         let data = await url.json(); 
         console.log(data);
         let arr = [];
         for(let i=0;i<data.length;i++){
-            if(data[i].category == 'women' && (+data[i].price)>=min && (+data[i].price)<=max){
+            if((+data[i].price)>=min && (+data[i].price)<=max){
                 arr.push(data[i]);
             }
-        }
-        console.log(arr);
+        } 
+        JSON.stringify(arr);
+        console.log("workin"+arr);
         appenddata(arr);
     }
 
@@ -359,16 +361,14 @@
         fetchapi3(sorting.value);
     })
 
+
+
+
     async function fetchapi3(value){
         let url = await fetch('https://63c8bafd075b3f3a91e5c84d.mockapi.io/product');
-        let data = await url.json(); 
-        console.log(data);
-        let arr = [];
-        for(let i=0;i<data.length;i++){
-            if(data[i].category == 'women'){
-                arr.push(data[i]);
-            }
-        }
+        let arr = await url.json(); 
+        console.log(arr);
+        
 
         let newarr = [];
         if(value == 'low'){
@@ -405,7 +405,6 @@
     function appenddata(arr){
         let bodyel = document.querySelector('.bdyright');
         bodyel.innerHTML = ""; 
-        // JSON.parse(localStorage.getItem('product')) = [];
         let newarr = [];
         arr.forEach((element,index) => {   
             let div = document.createElement('div');
@@ -429,10 +428,6 @@
             div.append(img,p1,a2,p3,p5,p4);
             bodyel.append(div);
         });
-
-
-        
-
 
     }
 </script>
