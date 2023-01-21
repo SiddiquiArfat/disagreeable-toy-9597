@@ -5,14 +5,370 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+
+
+    <div class="top">
+        <div class="header">
+            <p>Free Shipping on Orders $50+ <span><u>Details</u></span></p>
+            <a href="./index.html"><img src="./clothi.png" alt="Error"></a>
+            <div class="icon">
+                <div id="src" onclick="show()">
+                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <div id="pro" onclick="show2()">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <div id="basket">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav">
+            <div class="subnav">
+            <a href="./women.html">WOMEN</a>
+            <a href="./mens.html">MEN</a>
+            <a href="./jeans.html">JEANS</a>
+            <a href="">NEW</a>
+            <a href="">SALE</a>
+            <a href="">STYLE TRIAL RENTAL</a>
+            <a href="">COMMUNITY</a>
+            <a href="">LABELS WE LOVE</a>
+        </div>
+        </div>
+
+    </div>
     
+
+    <div id="sidebar">
+        
+        <input type="text" name="" id="searchval" placeholder="Enter Product">
+        <button id="srcbtn">search</button>
+        <h3>TRENDING SEARCH</h3>
+        <ul>
+            <li><a href="women.html">Womens Trending</a> </li>
+            <li><a href="mens.html">Mens Trending</a></li>
+            <li><a href="jeans.html">Jeans</a></li>
+        </ul>
+    </div>
+    <div id="sidebar2">
+        <div>
+        <h1>EXPRESS<span>INSIDER</span></h1>
+        <p>A WORLD OF REWARDS AND ACCESS</p>
+        <button >JOIN FOR FREE</button>
+        <button id="btn1" onclick="redilog()">SIGN IN</button>
+        </div>
+        <ul>
+        </ul>
+    </div>
+
+
+    <div class="pro-container">
+        <div id="pro-left">
+        </div>
+        
+        <div id="pro-right"></div>
+    </div>
+    <div id="leftheading"></div>
+
+    <div id="productdetail"></div>
+
+
+
+
+    
+    <!-- footer -->
+
+<div class="mainfooter">
+    <div class="footer">
+
+        <div class="left">
+            <div class="buttons">
+                <button class="apple">
+                    <i class="fa-brands fa-apple"></i>
+                    <div>
+                        <p>download on the</p>
+                        <h3>Apple Store</h3>
+                    </div>
+                   
+                </button>
+                <button class="playestore">
+    
+                    <i class="fa-brands fa-google-play"></i>
+                    <div>
+                        <p>Get it on</p>
+                        <h3>Google Play</h3>
+                    </div>
+                </button>
+            </div>
+            <div class="reg">
+                <a href="">SIGN UP FOR MOBILE ALERTS</a><br>
+                <a href="">SIGN UP FOR EMAIL</a>
+                <div class="logos">
+                    <i class="fa-brands fa-instagram"></i>
+                    <i class="fa-brands fa-snapchat"></i>
+                    <i class="fa-brands fa-pinterest-p"></i>
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-youtube"></i>
+                    <i class="fa-brands fa-spotify"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="table1">
+            <table>
+                <thead>
+                    <th>Store Locator</th>
+                </thead>
+                <tbody>
+                    <tr><td>Find Store</td></tr>
+                    
+                    <tr></tr><td>Express Factory Outlet</td></tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <th>Express Insider</th>
+                </thead>
+                <tbody>
+                    <tr><td>Express Insider Rewards</td></tr>
+                    
+                    <tr><td>Frequently Asked Question</td></tr>
+                    <tr><td>Trems And Conditions</td></tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <th>Express Credit Card</th>
+                </thead>
+                <tbody>
+                    <tr><td>Benefits</td></tr>
+                    <tr><td>Apply</td></tr>
+                    <tr><td>Pay/View Account</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="table1">
+            <table>
+                <thead>
+                    <th>Gift Card</th>
+                </thead>
+                <tbody>
+                    <tr><td>Buy Gift Cards</td></tr>
+                    
+                    <tr></tr><td>Check Your Balance</td></tr>
+                </tbody>
+            </table>
+
+            <table>
+                <thead>
+                    <th>About Clothishop</th>
+                </thead>
+                <tbody>
+                    <tr><td>Overview</td></tr>
+                    <tr><td>Invester Relation</td></tr>
+                    <tr><td>ESG</td></tr>
+                    <tr><td>Careers</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table1">
+            <table>
+                <thead>
+                    <th>Popular Pages</th>
+                </thead>
+                <tbody>
+                    <tr><td>Women's Clothing</td></tr>   
+                    <tr><td>Men's Clothing</td></tr>
+                    <tr><td>Men's & Women's Jeans</td></tr>
+                    <tr><td>Women's Wear to Work</td></tr>
+                    <tr><td>Very Merry Velvet</td></tr>
+                    <tr><td>Women's Dresses</td></tr>
+                    <tr><td>Women's Editor Pants</td></tr>
+                    <tr><td>Women's Tops</td></tr>
+                    <tr><td>Women's Sweaters</td></tr>
+                    <tr><td>Women's Faux Leather</td></tr>
+                    <tr><td>Women's Outerwear</td></tr>
+                    <tr><td>Men's Suits</td></tr>
+                    <tr><td>Men's Shirts</td></tr>
+                    <tr><td>Men's Sweatshirts & Hoodies</td></tr>
+                    <tr><td>Men's Sweaters</td></tr>
+                    <tr><td>Men's Pants</td></tr>
+                    <tr><td>Men's Chinos & Joggers</td></tr>
+                    <tr><td>Men's Outerwear</td></tr>
+                    <tr><td>Express Style 101</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table1">
+            <table>
+                <thead>
+                    <th>Customer Services</th>
+                </thead>
+                <tbody>
+                    <tr><td>Contact Us</td></tr>
+                    <tr><td>Help</td></tr>
+                    <tr><td>Clothishop Coupons</td></tr>
+                    <tr><td>Shipping Policy</td></tr>
+                    <tr><td>Returns Policy</td></tr>
+                    <tr><td>Student Discount</td></tr>
+                    <tr><td>Feedback</td></tr>
+                    <tr><td>Express Market FAQ</td></tr>
+                    <tr><td>Klarna Payments</td></tr>
+                    <tr><td>Google Ad Price Policy</td></tr>
+            </table>       
+        </div>
+        
+    </div>
+    <div class="bot">
+        <p>Terms & Conditions | Accessibility | About Ads | Privacy Policy | Do Not Sell My Personal Information | Site Map | © 2023 Clothishop. All rights reserved.</p>
+    </div>
+    </div>
+
+
+
 </body>
 
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
+
+function show(){
+    document.getElementById('sidebar').classList.toggle('active');
+}
+function show2(){
+    document.getElementById('sidebar2').classList.toggle('active');
+}
+function redilog(){
+    location.replace('./login.html')
+}
+
+
+let btnnn = document.getElementById('srcbtn');
+let vall = document.getElementById('searchval');
+
+btnnn.addEventListener('click',function(e){
+    e.preventDefault();
+ 
+    let a = vall.value;
+    console.log(a)  
+    let arr = a;
+    localStorage.setItem('src',JSON.stringify(arr)); 
+    location.replace('./search.html');
+})
+
+
+
+// let form = document.querySelector('form');
+let btn = document.getElementById('srcbtn');
+let val = document.getElementById('searchval');
+
+btn.addEventListener('click',function(e){
+    e.preventDefault();
+ 
+    let a = val.value;
+    console.log(a)  
+    let arr = a;
+    localStorage.setItem('src',JSON.stringify(arr)); 
+    location.replace('./search.html');
+})
+
+function redilog(){
+    location.replace('./login.html')
+}
     let arr = JSON.parse(localStorage.getItem('product')) || [];
-    console.log(arr);
+    let div = document.getElementById('pro-left');
+    let divr = document.getElementById('pro-right');
+    let divh = document.getElementById('leftheading');
+    divr.innerHTML = "";
+    div.innerHTML = "";
+       
+        let img = document.createElement('img');
+        img.src = arr[0].image;
+        console.log(arr[0].image);
+        
+        div.append(img)
+
+
+        let head = document.createElement('h1');
+        head.textContent = '#CLOTHISHOP';
+        let p2 = document.createElement('p');
+        p2.textContent = "Dream Big. Dress Accordingly. Share your style on social with #ExpressYou and tag @clothishop to be featured here.";
+        divh.append(head,p2);
+
+
+        let h1 = document.createElement('h1');
+        h1.textContent = arr[0].title;
+        
+        let p = document.createElement('p');
+        p.textContent = "Ratings: " +arr[0].rating;
+
+        let h2 = document.createElement('h2');
+        h2.textContent = "$"+arr[0].price;
+        let p1 = document.createElement('p');
+        p1.textContent = "Buy 1, Get 1 50% Off";
+        let a = document.createElement("a");
+        a.textContent = "Shop All Tops";
+        a.href = "#"
+        let btnn = document.createElement('button');
+        btnn.textContent = "Add to Bag";
+        btnn.addEventListener('click',()=>{
+            if(check(arr[0].id)){
+            let arr1 = JSON.parse(localStorage.getItem('bag'))||[];
+            arr1.push(arr[0]);
+            localStorage.setItem('bag',JSON.stringify(arr1));
+            alert("Product Added");
+            }
+            else{
+                alert("Already In a bag");
+            }
+
+        })
+        divr.append(h1,p,h2,p1,a,btnn);
+
+
+        let pd = document.getElementById('productdetail');
+        // let divv= document.createElement('div');
+        let h3 = document.createElement('h3');
+        let pp = document.createElement('p');
+        pp.textContent = arr[0].desc;
+        h3.textContent = "Product Details";
+        let h4 = document.createElement('h4');
+        h4.textContent = "Description";
+        pd.append(h3,h4,pp);
+        
+        let arr2 = JSON.parse(localStorage.getItem('bag'))||[];
+        function check(num){
+          for(let i=0;i<arr2.length;i++){
+            if((+num) != (+arr2[i].id)){
+              continue;
+            }
+            else{
+              return false
+            }
+          }
+          return true
+        }
 </script>
 
 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="logbdy">
+    <div class="loginhead"><h1>CLOTHISHOP<span>INSIDER</span></h1></div>
+
+    <form action="">
+        <div>
+            <label for="">EMAIL</label><br>
+        <input type="email" name="" id="email"
+        placeholder="ENTER REGISTERED EMAIL">
+        <br>
+        </div>
+        <div>
+            <label for="">PASSWORD</label><br>
+        <input type="password" name="" id="pass" placeholder="ENTER PASSWORD">
+        <br>
+        </div>
+        
+        <input type="submit" value="LOG IN" id="logbtn">
+    </form>
+    <div id="redirect">
+        <p>NOT A MEMBER?</p>
+        <a href="">JOIN FOR FREE</a>
+    </div>
+    
+
+</div>
+</body>
+<script>
+    let arr = JSON.parse(localStorage.getItem('login'))||[];
+    let form = document.querySelector('form');
+    form.addEventListener('submit',()=>{
+        event.preventDefault();
+        let email = form.email.value;
+        let pass = form.pass.value;
+        console.log(arr[0].email == email)
+        console.log(arr[0].password ==  pass)
+        console.log(email,pass)
+        for(let i=0;i<arr.length;i++){
+        if(arr[i].email == email && arr[i].password == pass){
+            alert('Logged in')
+            location.replace('./index.html');
+            let a = "login";
+            localStorage.setItem('cc',JSON.stringify(a));
+        }
+    }   
+    alert("wrong password") 
+    })
+    
+</script>
+</html>

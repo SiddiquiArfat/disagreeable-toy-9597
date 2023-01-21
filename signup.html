@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="logbdy">
+        <div class="loginhead"><h1>CLOTHISHOP<span>INSIDER</span></h1></div>
+    
+        <form action="">
+            <div>
+                <label for="">EMAIL</label><br>
+            <input type="email" name="" id="email"
+            placeholder="ENTER EMAIL">
+            <br>
+            </div>
+            <div>
+                <label for="">FULL NAME</label><br>
+            <input type="text" name="" id="name"
+            placeholder="ENTER FULL NAME">
+            <br>
+            </div>
+            <div>
+            <label for="">ADDRESS</label><br>
+            <input type="text" name="" id="address"
+            placeholder="ENTER FULL ADDRESS">
+            <br>
+            </div>
+            <div>
+                <label for="">PIN CODE</label><br>
+                <input type="number" name="" id="code"
+                placeholder="ENTER PINCODE">
+                <br>
+                </div>
+                <div>
+                    <label for="">CONTACT NUMBER</label><br>
+                    <input type="number" name="" id="number"
+                    placeholder="ENTER CONTACT NUMBER">
+                    <br>
+                    </div>
+            <div>
+            <label for="">PASSWORD</label><br>
+            <input type="password" name="" id="password" placeholder="ENTER PASSWORD">
+            <br>
+            </div>
+            <input type="submit" value="SIGN UP" id="logbtn">
+
+            
+        </form>
+        <div id="redirect">
+            <P></P>
+            <a href="./index.html">GO BACK</a>
+        </div>
+</body>
+
+<script>
+    let form = document.querySelector('form');
+        let a = document.getElementById('logbtn');
+        let email = document.getElementById('email');
+        let name = document.getElementById('name');
+        let address = document.getElementById('address');
+        let pincode = document.getElementById('code');
+        let number = document.getElementById('number');
+        let password = document.getElementById('password');
+    form.addEventListener('submit',()=>{
+        event.preventDefault();
+         
+        let obj = {
+            name: form.name.value,
+            email: email.value,
+            address: address.value,
+            pincode: pincode.value,
+            number: number.value,
+            password: password.value
+        };
+        console.log(obj);
+        let arr = JSON.parse(localStorage.getItem('login'))||[];
+        arr.push(obj);
+        localStorage.setItem('login',JSON.stringify(arr));
+        location.replace("./login.html");
+    })
+</script>
+
+
+</html>

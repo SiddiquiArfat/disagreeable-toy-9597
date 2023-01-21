@@ -82,7 +82,8 @@ i{
     content: '';
     position: absolute;
     width: 100%;
-    height: 0.160rem;
+    /* height: 0.160rem; */
+    height: 1.5px;
     background-color: black;
     left: 0;
     bottom: 0;
@@ -100,7 +101,8 @@ i{
     content: '';
     position: absolute;
     width: 100%;
-    height: 0.175rem;
+    /* height: 0.175rem; */
+    height: 1.5px;
     background-color: black;
     left: 0;
     bottom: 0;
@@ -465,6 +467,13 @@ color: rgb(78, 78, 78);
     /* margin-top: 10px; */
     color: gray;
     margin-bottom: 4px;
+    font-weight: 300;
+}
+.bdyright p:nth-child(6){
+    /* margin-top: 10px; */
+    
+    margin-bottom: 4px;
+    font-weight: 300;
 }
 .bdyright p{
     padding: 4px;
@@ -498,16 +507,16 @@ color: rgb(78, 78, 78);
 /* .browse.active .browsecat{
     max-height: 500px;
     transition: 0.3s;
-}
+} */
 .browse.active i {
     transition: 0.3s;
-    transform: rotate(45deg); */
-/* } */
+    transform: rotate(45deg); 
+ }
 .browsecat{
     line-height: 25px;
-    /* color: gray; */
+    color: gray;
     font-size: 15px;
-    /* text-decoration: none; */
+    text-decoration: none;
     /* max-height: 0; */
     overflow: hidden;
 }
@@ -576,11 +585,11 @@ color: rgb(78, 78, 78);
 
 /* search */
 #sidebar{
-   
     position: absolute;
     width: 400px;
     height: 100%;
     background-color: #fff;
+    transition: 0.3s ease;
     left: -400px;
     margin: auto;
 }
@@ -638,4 +647,191 @@ color: rgb(78, 78, 78);
     margin-top: 30px;
     text-decoration: none;
     color: gray;
+}
+
+/* profile */
+
+#sidebar2{
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    transition: 0.3s ease;
+    left: -400px;
+    margin: auto;
+}
+#sidebar2.active{
+    left: 0;
+    transition: 0.5s ease;
+}
+#sidebar2 h1 span{
+    font-weight: 100;
+}
+#sidebar2 div{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    position: relative;
+}
+#sidebar2 h1{
+    margin-left: 55px;
+    margin-top: 60px;
+    color: white;
+    position: absolute;
+}
+#sidebar2 p{
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+    position: absolute;
+    margin-left: 50px;
+}
+
+/* button */
+#sidebar2 button{
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 30px;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 500;
+}
+#sidebar2 button:hover{
+    border: 0.5px solid #fff;
+    background-color: black;
+    /* color: white; */
+    color: #fff;
+    transition: 0.3s ease;
+}
+
+#sidebar2 #btn1{
+    margin-left: 220px;
+    padding-left: 50px;
+    padding-right: 50px;
+    color: white;
+    background: black;
+    border: 1px solid #fff;
+}
+#sidebar2 #btn1:hover{
+    color: black;
+    background: #fff;
+    transition: 0.3s ease;
+    /* border: 1px solid #fff; */
+}
+
+
+/* search */
+
+#logbdy{
+    width: 30%;
+    
+    margin: auto;
+    margin-top: 80px;
+}
+.loginhead span{
+    font-weight: 300;   
+}
+
+form div{
+    margin-top: 40px;
+}
+form input{
+    padding: 10px;
+    width: 70%;
+    border: none;
+    border-bottom: 0.2px solid black;
+    margin-top: 10px;
+}
+
+#logbtn{
+    margin-top: 30px;
+    border: 0.2px solid black;
+    font-weight: 500;
+    background-color: #fff;
+    width: 350px;
+}
+#logbtn:hover{
+    background-color: black;
+    color: white;
+    transition: 0.3s ease;
+}
+
+#redirect{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    font-size: 15px;
+}
+#redirect p{
+    font-weight: 600;
+}
+#redirect a{
+    color: gray;
+}
+
+/* product css */
+
+.pro-container{
+    display: flex;
+    justify-content: space-between;
+}
+#pro-left img{
+    width: 100%;
+    margin-left: 140px;
+    margin-top: 90px;
+}
+#pro-right{
+    margin-right: 100px;
+    margin-top: 90px;
+    line-height: 40px;
+    width: 50%;
+    /* position: absolute; */
+}
+#pro-right a{
+    color: gray;
+    text-decoration: none;
+}
+
+#pro-right button{
+    display: block;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 20px 50px 20px 50px;
+    background-color: black;
+    color: white;
+}
+
+#pro-right button:hover{
+    color: black;
+    background: #fff;
+    border: 0.1px solid black;
+    transition: 0.3s ease;
+}
+
+#leftheading{
+    margin-left: 140px;
+    margin-top: 30px;
+    line-height: 40px;
+}
+
+#productdetail{
+    margin-top: 70px;
+    height: 500px;
+    background-color: rgb(226, 226, 226);
+    border-radius: 30px;
+}
+#productdetail h3{
+    padding: 50px;
+    width: 300px;
+}
+#productdetail p{
+    width: 400px;
+    line-height: 30px;
+    margin-left: 50px;
+}
+#productdetail h4{
+    width: 300px;
+    line-height: 30px;
+    margin-left: 50px;
 }
