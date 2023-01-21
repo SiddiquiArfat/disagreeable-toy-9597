@@ -14,9 +14,10 @@
             <p>Free Shipping on Orders $50+ <span><u>Details</u></span></p>
             <img src="./clothi.png" alt="Error">
             <div class="icon">
-                <div id="src">
+                <div id="src" onclick="show()">
                     <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
                 </div>
+
                 <div id="pro">
                     <i class="fa-regular fa-user"></i>
                 </div>
@@ -29,7 +30,7 @@
         <div class="nav">
             <div class="subnav">
             <a href="./women.html">WOMEN</a>
-            <a href="">MEN</a>
+            <a href="./mens.html">MEN</a>
             <a href="">JEANS</a>
             <a href="">NEW</a>
             <a href="">SALE</a>
@@ -42,7 +43,17 @@
     </div>
     
 
-    
+    <div id="sidebar">
+        
+        <input type="text" name="" id="searchval" placeholder="Enter Product">
+        <button id="srcbtn">search</button>
+        <h3>TRENDING SEARCH</h3>
+        <ul>
+            <li><a href="women.html">Womens Trending</a> </li>
+            <li><a href="mens.html">Mens Trending</a></li>
+            <li><a href="jeans.html">Jeans</a></li>
+        </ul>
+    </div>
     
 
 
@@ -397,4 +408,5 @@
     </div>
     </div>
 </body>
+<script src="./app.js"></script>
 </html>

@@ -521,18 +521,26 @@ color: rgb(78, 78, 78);
 .heading{
     display: flex;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 30px;
+    width: 100%;
 }
-
+.heading h1{ 
+    width: 100%;
+}
 .heading div{
     display: flex;
-    padding: 50px;
+    padding: 20px;
     border-bottom: 1px solid gray;
 }    
 
 .heading div p{
     margin-top: 10px;
     margin-right: 5px;
+}
+#sorting:hover{
+    background-color: black;
+    color: #fff;
+    transition: 0.3s;
 }
 
 #sortmin{
@@ -564,3 +572,70 @@ color: rgb(78, 78, 78);
     margin-top: 5px;
 }
 
+
+
+/* search */
+#sidebar{
+   
+    position: absolute;
+    width: 400px;
+    height: 100%;
+    background-color: #fff;
+    left: -400px;
+    margin: auto;
+}
+
+#sidebar.active{
+    left: 0;
+    transition: 0.5s ease;
+}
+
+#sidebar ul il a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+#searchval{
+    width: 60%;
+    height: 30px;
+    margin-left: 30px;
+    padding: 5px;
+    border: none;
+    border-bottom: 0.1px solid black;
+}
+#srcbtn{
+    padding: 5px;
+    height: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #fff;
+    border: none;
+    border: 0.1px solid black;
+}
+#srcbtn:hover{
+    background-color: black;
+    color: #fff;
+    transition: 0.3s ease;
+}
+#sidebar h3{
+    margin-top: 30px;
+    margin-left: 30px;
+}
+#sidebar ul{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    /* padding: 30px; */
+    text-decoration: none;
+}
+#sidebar li{
+    margin-top: 20px;
+    text-decoration: none;
+    color: gray;
+}
+#sidebar li a{
+    margin-top: 30px;
+    text-decoration: none;
+    color: gray;
+}
