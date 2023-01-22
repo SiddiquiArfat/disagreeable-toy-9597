@@ -15,6 +15,11 @@ location.replace('./search.html');
 })
 
 
+let cart = document.getElementById('basket');
+cart.addEventListener('click',()=>{
+    location.replace('./cart.html');
+})
+
 let select = document.querySelector(".question");
 let select2 = document.querySelector(".browsecat");
 // select.forEach(element => {
@@ -149,3 +154,7 @@ function show2(){
 function redilog(){
     location.replace('./login.html')
 }
+let sss = document.getElementById('btn111');
+        sss.addEventListener('click',()=>{
+        location.replace('./signup.html');
+        })

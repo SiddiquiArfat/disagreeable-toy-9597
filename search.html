@@ -9,15 +9,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
+    
     <div class="top">
         <div class="header">
             <p>Free Shipping on Orders $50+ <span><u>Details</u></span></p>
-            <img src="./clothi.png" alt="Error">
+            <a href="./index.html"><img src="./clothi.png" alt="Error"></a>
             <div class="icon">
-                <div id="src">
+                <div id="src" onclick="show()">
                     <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
                 </div>
-                <div id="pro">
+
+                <div id="pro" onclick="show2()">
                     <i class="fa-regular fa-user"></i>
                 </div>
                 <div id="basket">
@@ -25,6 +27,9 @@
                 </div>
             </div>
         </div>
+
+        
+    
 
         <div class="nav">
             <div class="subnav">
@@ -38,17 +43,29 @@
             <a href="">LABELS WE LOVE</a>
         </div>
         </div>
+
     </div>
 
     <div id="sidebar">
         
-        <input type="text" name="" id="searchval">
-        <button id="srcbtn" onclick="src()">search</button>
+        <input type="text" name="" id="searchval" placeholder="Enter Product">
+        <button id="srcbtn">search</button>
+        <h3>TRENDING SEARCH</h3>
         <ul>
-            <il><a href="">Womens Trending</a> </il>
-            <il><a href="">Mens Trending</a></il>
-            <il><a href="">Jeans</a></il>
+            <li><a href="women.html">Womens Trending</a> </li>
+            <li><a href="mens.html">Mens Trending</a></li>
+            <li><a href="jeans.html">Jeans</a></li>
         </ul>
+    </div>
+    <div id="sidebar2">
+        
+        
+        <div>
+        <h1>EXPRESS<span>INSIDER</span></h1>
+        <p>A WORLD OF REWARDS AND ACCESS</p>
+        <button >JOIN FOR FREE</button>
+        <button id="btn1" onclick="redilog()">SIGN IN</button>
+        </div>
         
     </div>
 
@@ -350,6 +367,19 @@
         console.log("workin"+arr);
         appenddata(arr);
     }
+    function show(){
+    document.getElementById('sidebar').classList.toggle('active');
+}
+function show2(){
+    document.getElementById('sidebar2').classList.toggle('active');
+}
+function redilog(){
+    location.replace('./login.html')
+}
+let cart = document.getElementById('basket');
+cart.addEventListener('click',()=>{
+    location.replace('./cart.html');
+})
 
 
 
@@ -428,6 +458,24 @@
             div.append(img,p1,a2,p3,p5,p4);
             bodyel.append(div);
         });
+
+        let cart = document.getElementById('basket');
+        cart.addEventListener('click',()=>{
+        location.replace('./cart.html');
+        })
+
+        let btn = document.getElementById('srcbtn');
+let val = document.getElementById('searchval');
+
+btn.addEventListener('click',function(e){
+    e.preventDefault();
+ 
+    let a = val.value;
+    console.log(a)  
+    let arr = a;
+    localStorage.setItem('src',JSON.stringify(arr)); 
+    location.replace('./search.html');
+})
 
     }
 </script>

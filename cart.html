@@ -5,47 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
+
 <body>
-    <!-- <div class="top">
-        <div class="header">
-            <p>Free Shipping on Orders $50+ <span><u>Details</u></span></p>
-            <img src="./clothi.png" alt="Error">
-            <div class="icon">
-                <div id="src"  onclick="show()">
-                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div id="pro" onclick="show2()">
-                    <i class="fa-regular fa-user"></i>
-                </div>
-                <div id="basket">
-                    <i class="fa-solid fa-bag-shopping"></i>
-                </div>
-            </div>
-        </div>
-
-        <div class="nav">
-            <div class="subnav">
-            <a href="./women.html">WOMEN</a>
-            <a href="./mens.html">MEN</a>
-            <a href="./jeans.html">JEANS</a>
-            <a href="">NEW</a>
-            <a href="">SALE</a>
-            <a href="">STYLE TRIAL RENTAL</a>
-            <a href="">COMMUNITY</a>
-            <a href="">LABELS WE LOVE</a>
-        </div>
-        </div>
-    </div> -->
-
-
 
 
     <div class="top">
         <div class="header">
-            <p>Free Shipping on Orders $50+ <span><u>Details</u></span></p>
+            <p>Free Shipping on Orders $50+<span><u>Details</u></span></p>
             <a href="./index.html"><img src="./clothi.png" alt="Error"></a>
             <div class="icon">
                 <div id="src" onclick="show()">
@@ -77,8 +46,6 @@
     </div>
 
 
-
-
     <div id="sidebar">
         
         <input type="text" name="" id="searchval" placeholder="Enter Product">
@@ -96,87 +63,27 @@
         <div>
         <h1>EXPRESS<span>INSIDER</span></h1>
         <p>A WORLD OF REWARDS AND ACCESS</p>
-        <button id="btn111">JOIN FOR FREE</button>
+        <button >JOIN FOR FREE</button>
         <button id="btn1" onclick="redilog()">SIGN IN</button>
         </div>
         
     </div>
 
 
-    <div class="heading">
-        <div>
-            Women / Tops
-        </div>
-        <div>
-            <h1>WOMEN'S TOPS</h1>
-        </div>
-        <div>
-            <p>Sort By:</p> 
-            <select name="" id="sorting">
-                <option value="">Price </option>
-                <option value="low">
-                    Low To High
-                </option>
-                <option value="high">
-                    High To Low
-                </option>
-            </select>
-        </div>
+    <div class="cart-container"></div>
+    <div id="pro-container">
+        <h1>PAYMENT DETAILS</h1>
+        <h4 id="total">
+            PRODUCT AMOUNT <span id="order-total">0</span>
+        </h4>
+        <h4 id="total">
+             DELIVERY CHARGES $<span>40</span>
+        </h4>
+        <h4 id="total">
+            TOTAL AMOUNT <span id="order-totall">0</span>
+        </h4>
+          <button id="order">PLACE ORDER</button>
     </div>
-
-
-
-    <div class="bdy">
-        <div class="bdyleft">
-            <section>
-                <h1>BROWSE BY:</h1>
-                <div class="browse">
-                    <div class="question">
-                        <h3>CATEGORY</h3>
-                        <i class="fa-duotone fa-plus"></i>
-                    </div>
-                    <div class="browsecat">
-                        <a style="color: black; font-weight: 600;">All Tops</p>
-                        <a href="#">Sweaters</a>
-                        <a href="#">Shirts & Blouses</a>
-                        <a href="#">Body Contour Tops</a>
-                        <a href="#">Statement Tops</a>
-                        <a href="#">Icons: Portofino Shirts</a>
-                        <a href="#">Bodysuits</a>
-                        <a href="#">Essential Tops</a>
-                        <a href="#">Tees</a>
-                        <a href="#">Tanks & Camis</a>
-                        <a href="#">Jackkets & Coats</a>
-                        <a href="#">Activewear Tops</a>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <h1>FILTER BY:</h1>
-                <div class="browse">
-                    <div class="question">
-                        <h3>PRICE</h3>
-
-                        <i class="fa-duotone fa-plus"></i>
-                        
-                    </div>
-                    <div class="browsecat">
-                        <a style="color: black; font-weight: 600;">All Tops</p>
-                        <input type="number" placeholder="Minimum" id="min">
-                        <input type="number" placeholder="Maximum" id="max">
-                        <button id="sortmin">Filter</button>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <div class="bdyright">
-            <h1 class="righth1"></h1>
-        </div>
-    </div>    
-
-
-
-
 
 
     <!-- footer -->
@@ -331,6 +238,139 @@
         <p>Terms & Conditions | Accessibility | About Ads | Privacy Policy | Do Not Sell My Personal Information | Site Map | © 2023 Clothishop. All rights reserved.</p>
     </div>
     </div>
+
+
+
 </body>
-<script src="./women.js"></script>
+<!-- <script src="./login-placed.js"></script> -->
+<script>
+    let body = document.querySelector('.cart-container');
+    let arr = JSON.parse(localStorage.getItem('bag'))||[];
+    appenddata(arr);
+    let newarr = [];
+
+
+    function appenddata(arr){
+        body.innerHTML = "";
+        arr.forEach(element => {
+           let div = document.createElement('div');
+           let img = document.createElement('img');
+           img.src = element.image;
+
+           let a = document.createElement('a');
+           a.textContent = element.title;
+            a.addEventListener('click',()=>{
+            newarr.push({...element});
+            localStorage.setItem('product',JSON.stringify(newarr));
+            })
+            a.href = "./product.html";
+
+
+           let p = document.createElement('p');
+           p.textContent = "$"+element.price;
+           let p1 = document.createElement('p');
+           p1.textContent = "Buy 1 get 1 50% Off";
+
+           let inbtn = document.createElement('button');
+           inbtn.textContent = "+";
+           inbtn.addEventListener('click',()=>{
+            let a = (+element.quantity);
+            a++;
+            element.quantity = a;
+            localStorage.setItem('bag',JSON.stringify(arr));
+            cal();
+            appenddata(arr);
+           })
+
+           let span = document.createElement('span');
+           span.textContent = element.quantity;
+           
+           let decbtn = document.createElement('button');
+           decbtn.textContent = "-";     
+           decbtn.addEventListener('click',()=>{
+            let a = (+element.quantity);
+            if(a>1){
+            a--;
+            element.quantity = a;
+            localStorage.setItem('bag',JSON.stringify(arr));
+            cal();
+            appenddata(arr);
+            }
+           })
+
+
+           let remove = document.createElement('button');
+           remove.textContent = "Remove";
+           remove.addEventListener('click',()=>{
+            arr = arr.filter((ele)=>{
+                return ele.id!=element.id;
+            })
+            localStorage.setItem('bag',JSON.stringify(arr));
+            cal();
+            appenddata(arr)
+           })
+
+           div.append(img,a,p,inbtn,span,decbtn,remove);
+           body.append(div);
+        });
+    }
+
+    // let h1 = document.getElementsById('order-total');
+    let h1 = document.getElementById('order-total');
+    let h4 = document.getElementById('order-totall');
+    cal();
+    function cal(){
+        let arr = JSON.parse(localStorage.getItem('bag'))||[];
+      let product = 0
+    for(let i=0;i<arr.length;i++){
+      product += (+arr[i].price)*(+arr[i].quantity);
+    }
+        console.log(product)
+        console.log(h1);
+        h1.textContent = "$"+product;
+        if(product>0){
+            h4.textContent = "$"+(product+40);
+        }
+        else{
+            h4.textContent = "$"+0;
+        }
+    }
+
+
+    function show(){
+    document.getElementById('sidebar').classList.toggle('active');
+}
+function show2(){
+    document.getElementById('sidebar2').classList.toggle('active');
+}
+function redilog(){
+    location.replace('./login.html')
+}
+
+
+let btn = document.getElementById('srcbtn');
+let val = document.getElementById('searchval');
+let cart = document.getElementById('basket');
+cart.addEventListener('click',()=>{
+    location.replace('./cart.html');
+})
+btn.addEventListener('click',function(e){
+    e.preventDefault();
+ 
+    let a = val.value;
+    console.log(a)  
+    let arr = a;
+    localStorage.setItem('src',JSON.stringify(arr)); 
+    location.replace('./search.html');
+})
+
+
+
+let f = document.getElementById('order');
+f.addEventListener('click',()=>{
+    alert('Product has successfully placed');
+    location.replace('./index.html');
+})
+ </script> 
+
 </html>
