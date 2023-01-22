@@ -335,7 +335,7 @@ function redilog(){
         btnn.addEventListener('click',()=>{
             if(check(arr[0].id)){
             let arr1 = JSON.parse(localStorage.getItem('bag'))||[];
-            arr1.push(arr[0]);
+            arr1.push({...arr[0],quantity:1});
             localStorage.setItem('bag',JSON.stringify(arr1));
             alert("Product Added");
             }
@@ -357,8 +357,9 @@ function redilog(){
         h4.textContent = "Description";
         pd.append(h3,h4,pp);
         
-        let arr2 = JSON.parse(localStorage.getItem('bag'))||[];
+        
         function check(num){
+            let arr2 = JSON.parse(localStorage.getItem('bag'))||[];
           for(let i=0;i<arr2.length;i++){
             if((+num) != (+arr2[i].id)){
               continue;
@@ -369,6 +370,23 @@ function redilog(){
           }
           return true
         }
+
+let btnnnn = document.getElementById('srcbtn');
+let valll = document.getElementById('searchval');
+
+btnnnn.addEventListener('click',function(e){
+    e.preventDefault();
+ 
+    let a = valll.value;
+    console.log(a)  
+    let arr = a;
+    localStorage.setItem('src',JSON.stringify(arr)); 
+    location.replace('./search.html');
+})
+let cart = document.getElementById('basket');
+        cart.addEventListener('click',()=>{
+        location.replace('./cart.html');
+        })
 </script>
 
 

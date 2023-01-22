@@ -4,6 +4,13 @@ function show(){
 function show2(){
     document.getElementById('sidebar2').classList.toggle('active');
 }
+function redilog(){
+    location.replace('./login.html')
+}
+let cart = document.getElementById('basket');
+cart.addEventListener('click',()=>{
+    location.replace('./cart.html');
+})
 // let form = document.querySelector('form');
 let btn = document.getElementById('srcbtn');
 let val = document.getElementById('searchval');
@@ -17,7 +24,7 @@ btn.addEventListener('click',function(e){
     localStorage.setItem('src',JSON.stringify(arr)); 
     location.replace('./search.html');
 })
-
-function redilog(){
-    location.replace('./login.html')
-}
+let sss = document.getElementById('btn111');
+sss.addEventListener('click',()=>{
+    location.replace('./signup.html');
+})

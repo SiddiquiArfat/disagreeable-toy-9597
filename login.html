@@ -28,32 +28,11 @@
     </form>
     <div id="redirect">
         <p>NOT A MEMBER?</p>
-        <a href="">JOIN FOR FREE</a>
+        <a href="./signup.html">JOIN FOR FREE</a>
     </div>
     
 
 </div>
 </body>
-<script>
-    let arr = JSON.parse(localStorage.getItem('login'))||[];
-    let form = document.querySelector('form');
-    form.addEventListener('submit',()=>{
-        event.preventDefault();
-        let email = form.email.value;
-        let pass = form.pass.value;
-        console.log(arr[0].email == email)
-        console.log(arr[0].password ==  pass)
-        console.log(email,pass)
-        for(let i=0;i<arr.length;i++){
-        if(arr[i].email == email && arr[i].password == pass){
-            alert('Logged in')
-            location.replace('./index.html');
-            let a = "login";
-            localStorage.setItem('cc',JSON.stringify(a));
-        }
-    }   
-    alert("wrong password") 
-    })
-    
-</script>
+<script src="./login-placed.js"></script>
 </html>

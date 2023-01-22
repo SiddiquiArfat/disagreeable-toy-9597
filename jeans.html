@@ -12,11 +12,12 @@
     <div class="top">
         <div class="header">
             <p>Free Shipping on Orders $50+ <span><u>Details</u></span></p>
-            <img src="./clothi.png" alt="Error">
-            <div class="icon" >
+            <a href="./index.html"><img src="./clothi.png" alt="Error"></a>
+            <div class="icon">
                 <div id="src" onclick="show()">
                     <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
                 </div>
+
                 <div id="pro" onclick="show2()">
                     <i class="fa-regular fa-user"></i>
                 </div>
@@ -38,6 +39,7 @@
             <a href="">LABELS WE LOVE</a>
         </div>
         </div>
+
     </div>
 
     <div id="sidebar">
@@ -56,7 +58,7 @@
         <div>
         <h1>EXPRESS<span>INSIDER</span></h1>
         <p>A WORLD OF REWARDS AND ACCESS</p>
-        <button >JOIN FOR FREE</button>
+        <button id="btn111">JOIN FOR FREE</button>
         <button id="btn1" onclick="redilog()">SIGN IN</button>
         </div>
         
@@ -292,7 +294,15 @@
     </div>
     </div>
 </body>
+
+
 <script>
+
+
+let cart = document.getElementById('basket');
+        cart.addEventListener('click',()=>{
+        location.replace('./cart.html');
+        })
 
 
 function show2(){
@@ -437,7 +447,10 @@ function redilog(){
             div.append(img,p1,a2,p3,p5,p4);
             bodyel.append(div);
         });
-
+        let sss = document.getElementById('btn111');
+    sss.addEventListener('click',()=>{
+    location.replace('./signup.html');
+})
     }
 </script>
 </html>
