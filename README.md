@@ -8,8 +8,7 @@
         alt="error"
       />
 
-A user-friendly application for passengers to search for routes, select destination, make payments, and generate e-tickets, while offering administrators insights and tools to manage bus operations efficiently.
-
+Clone of Express.com using this website you can order men and women wear online
 
 
 # USER SIDE
