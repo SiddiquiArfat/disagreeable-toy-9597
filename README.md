@@ -1,18 +1,35 @@
-# disagreeable-toy-9597
+# ClothiShop
 
-# Clothishop
+# Online Shopping Website
+<img
+  align="right"
+        width="40%"
+        src="https://serene-twilight-1802f2.netlify.app/clothi.png"
+        alt="error"
+      />
 
-# Functionality
-1 Login
-2 Sign Up
-3 Sort
-4 Filter
-5 Add to Bag
-6 Remove from Bag
-7 Place Order
-8 Search funtionality
+A user-friendly application for passengers to search for routes, select destination, make payments, and generate e-tickets, while offering administrators insights and tools to manage bus operations efficiently.
 
-# Tech Stack
-HTML | CSS | JavaScript | LocalStorage
 
+
+# USER SIDE
+
+ 1. Login as Customer
+ 2. Sign Up
+ 3. View All Cloths
+ 4. Sorting
+ 5. Filtering
+ 6. Searching 
+ 7. Add to Cart
+ 8. Remove from Cart
+ 9. Place Order
+
+
+  
+## Tech Stack
+
+#### HTML | CSS | JavaScript | LocalStorage | Mock API
+
+## Modules
+- Customer Module
 
